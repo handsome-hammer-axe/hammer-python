@@ -3,7 +3,7 @@ name: Super-Linter
 on: push
 
 jobs: 
-    build: 
+    build:
         runs-on: ubuntu-latest
         steps: 
             - name: Checkout code
@@ -11,6 +11,7 @@ jobs:
 
             - name: Run Super-Linter
               uses: github/super-linter@v3
+              
               env:
                 DEFAULT_BRANCH: main 
-                GITHUB_TOKEN: ${{ secret.GITHUB_TOKEN }}
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
