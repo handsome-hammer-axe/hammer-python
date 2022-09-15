@@ -7,10 +7,11 @@ jobs:
     name: lint code base
     runs-on: ubuntu-latest
     steps: 
-        - name: checkout code
-          users: actions/checkout@v2
+        - name: Checkout code
+          uses: actions/checkout@v2
+          
         - name: Run Super-Linter
-          users: github/super-linter@v3
+          uses: github/super-linter@v3
           env:
             DEFAULT_BRANCH: main 
             GITHUB_TOKEN: ${{ secret.GITHUB_TOKEN }}
